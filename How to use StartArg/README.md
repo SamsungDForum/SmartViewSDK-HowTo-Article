@@ -3,8 +3,11 @@
 ----------
 
 ## 1. OverView
+> 
+> #### *"Authentication should ONLY be passed with secure connection"(coming soon)* ####
+> 
 
-- StartArg can be 'login user info','deeplink','AuthToken'
+- StartArg can be 'login user info','deeplink','AuthToken' etc..
 
 - Above Mobile Library Android 2.0.18 and iOS 2.2.1
 
