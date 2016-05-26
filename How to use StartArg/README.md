@@ -9,7 +9,7 @@
 
 - StartArg can be 'login user info','deeplink','AuthToken' etc..
 
-- Above Mobile Library Android 2.0.18 and iOS 2.2.1
+- Above Mobile Library Android 2.0.18 and iOS 2.2.2
 
 - Mobile App(Android) 
 
@@ -40,34 +40,29 @@
 		    e.printtackTrace();
 		}
 		Map<String,Object> startArgs2 = new HashMap<String, Object>();
-		Object  payload = test2.toString();
+		Object  payload = test2.toString;
 		startArgs2.put(Message.PROPERTY_MESSAGE_ID,payload);
 		mApplication = mService.createApplication(mApplicationId, mChannelId,startArgs2); 
  
 
 ## 3. iOS Guide
 
-- JSONObject type
+- Swift
 
-        var app: Application?
-        let  dic:NSDictionary  = ["userID":"XX", "userPW":"1234", "pairCode":"XX@1234"]
-        do {
-            let data =  try NSJSONSerialization.dataWithJSONObject(dic, options: NSJSONWritingOptions(rawValue: 0))
-            
-            let dataString = NSString( data: data, encoding: NSUTF8StringEncoding )
-            
-            let startArgs:[String:AnyObject] = ["id":dataString!]
-            
-            app = service.createApplication(NSURL(string: appURL)!, channelURI: channelId, args: startArgs)
-            app!.delegate = self
-            app?.connect()
-        }
-        catch
-        {
-            print("error")
-        }
- 
+		let  dic:Dictionary  = ["userID":"XX", "userPW":"1234", "pairCode":"XX@1234"]
+		
+		app = service.createApplication(appURL,channelURI: channelId, args: dic)
 
+
+- Object-C
+
+		NSMutableDictionary* dic = [NSMutableDictionary dictionary];
+		[dic setValue:@"XX" forKey:@"userID"];
+		[dic setValue:@"1234" forKey:@"userPW"];
+		[dic setValue:@"XX@1234" forKey:@"pairCode"];
+		
+		
+		self.app = [service createApplication:self.appId channelURI:self.channelId args:dic];
   
  
 
