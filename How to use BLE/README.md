@@ -17,7 +17,7 @@ To start BLE discovery we need to Search object to discover TV's using startUsin
 
 ### Register Listener for getting TV Device list
 
-To get the discovered devices we need to register search object with setOnBleFoundListener listner. If BLE discover any device, it notify through onFound() method of OnBleFoundListener.
+To get the discovered devices we need to register search object with setOnBleFoundListener listener. If BLE discovers any device, it notify through onFound() method of OnBleFoundListener.
 
     search.setOnBleFoundListener(new Search.OnBleFoundListener() {
         @Override
@@ -38,7 +38,7 @@ To stop BLE discovery, call stopUsingBLE() api of SmartView SDK.
 
 ## 3. iOS Guide
 
-### Creates search object 
+### Create search object 
 
     search = Service.search();
 
@@ -50,7 +50,7 @@ This API start searching for TV using BLE search.
 
 ### OnFound Callback:
 
-This callback method with found service is invoked when any TV using using BLE search.
+This callback method is invoked when the TV is using BLE search.
 
     func onFoundUsingBle(service : Service)
 
